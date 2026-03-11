@@ -1,0 +1,143 @@
+@font-face {
+  font-family: 'Jones';
+  src: url('/fonts/jones-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --background-white: 0 0% 100%;
+    --foreground: 0 0% 42%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 42%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 42%;
+
+    --primary: 158 30% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 0 0% 42%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 158 30% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 158 30% 56%;
+
+    --radius: 0.75rem;
+
+    --dark-bg: 0 0% 11%;
+    --dark-foreground: 0 0% 95%;
+
+    --font-display: 'Fraunces', serif;
+    --font-heading: 'Exo 2', sans-serif;
+    --font-body: 'Lato', sans-serif;
+
+    /* Typography scale */
+    --font-hero-headline: clamp(52px, 10vw, 80px);
+    --font-section-headline: clamp(36px, 6vw, 52px);
+    --font-card-title: clamp(20px, 3vw, 26px);
+    --font-tagline: clamp(16px, 2vw, 20px);
+
+    --font-body-large: clamp(18px, 2.5vw, 22px);
+    --font-body-default: clamp(17px, 2vw, 20px);
+    --font-body-small: clamp(15px, 1.8vw, 18px);
+
+    --font-label: clamp(13px, 1.5vw, 15px);
+    --font-button: clamp(16px, 2vw, 18px);
+    --font-nav: clamp(15px, 1.8vw, 17px);
+
+    --line-height-heading: 1.15;
+    --line-height-body: 1.75;
+    --line-height-card: 1.6;
+  }
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  #root {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    line-height: var(--line-height-heading);
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  p {
+    max-width: 620px;
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  button, a {
+    min-height: 48px;
+    max-width: 100%;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .bg-dark {
+    background-color: hsl(var(--dark-bg));
+  }
+  .text-dark-foreground {
+    color: hsl(var(--dark-foreground));
+  }
+  .bg-white-pure {
+    background-color: hsl(var(--background-white));
+  }
+}
